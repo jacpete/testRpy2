@@ -8,5 +8,10 @@ addR <- function(a,b) {
 #' @title addPy
 #' @param a,b Things to add
 #' @export
-addPy <- NULL
+addPy <- function(a,b) {
+  reticulate::source_python(
+    file = system.file("python", "addPy.py", package = packageName())
+  )
+  addPy(a,b)
+}
 
