@@ -35,9 +35,21 @@
 # }
 
 
-.onLoad <- function(libname, pkgname) {
-  reticulate::source_python(
-    file = system.file("python", "addPy.py", package = packageName()),
-    envir = getNamespace(packageName())
-  )
+# .onLoad <- function(libname, pkgname) {
+#   reticulate::source_python(
+#     file = system.file("python", "addPy.py", package = packageName()),
+#     envir = getNamespace(packageName())
+#   )
+# }
+
+
+#' @title Enable Python Functions
+#' @export
+usePython <- function() {
+    reticulate::source_python(
+      file = system.file("python", "addPy.py", package = packageName()),
+      envir = getNamespace(packageName())
+    )
 }
+
+
