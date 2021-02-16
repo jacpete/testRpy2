@@ -3,3 +3,4 @@
 export(addPy)
 export(addR)
 export(reticulate_conda_list_packages)
+export(usePython)
